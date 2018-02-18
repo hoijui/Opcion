@@ -24,13 +24,17 @@
  */
 package FontViewer.windows.dialogs;
 import FontViewer.components.*;
+import FontViewer.resources.*;
 
 import java.io.*;
+import java.util.*;
 import javax.swing.*;
 
 public class AboutDialog extends javax.swing.JDialog {
     private final String homepage = "http://opcion.sourceforge.net";
     private Icon logo;
+    private ResourceBundle rb;
+    private String title;
     
     /** Creates new form AboutDialog */
     public AboutDialog(JFrame parent) {
@@ -38,8 +42,10 @@ public class AboutDialog extends javax.swing.JDialog {
         super(parent);
 
         // Get logo
-        ClassLoader cl = this.getClass().getClassLoader();
-        logo = new ImageIcon(cl.getResource("FontViewer/resources/icons/Logo.gif"));
+        logo = new MyImageIcon("Logo.gif").getImageIcon();
+        
+        // Set title (with version)
+        title = " Opcion Font Viewer " + ResourceBundle.getBundle("FontViewer.resources.Opcion").getString("version") + " ";
         
         // Initialize components
         initComponents();
@@ -77,7 +83,7 @@ public class AboutDialog extends javax.swing.JDialog {
 
         contentPanel.setLayout(new java.awt.BorderLayout());
 
-        homepagePanel.setBorder(new javax.swing.border.TitledBorder(" Opcion Font Viewer v1.0.1 "));
+        homepagePanel.setBorder(new javax.swing.border.TitledBorder(title));
         homepageButton.setText("Visit Homepage");
         homepageButton.setToolTipText(homepage);
         homepageButton.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +150,7 @@ public class AboutDialog extends javax.swing.JDialog {
 
     private void changeLogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeLogButtonActionPerformed
         TextAreaFromFileDialog taffd = new TextAreaFromFileDialog((JFrame)this.getParent(), "Change Log", "changeLog.txt");
+        taffd.setBounds((java.awt.Toolkit.getDefaultToolkit().getScreenSize().width-300)/2, (java.awt.Toolkit.getDefaultToolkit().getScreenSize().height-400)/2, 300, 400);
         taffd.show();
     }//GEN-LAST:event_changeLogButtonActionPerformed
 

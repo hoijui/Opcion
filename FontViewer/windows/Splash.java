@@ -79,7 +79,7 @@ public class Splash extends javax.swing.JWindow {
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Version 1.0.1");
+        jLabel2.setText("Version " + java.util.ResourceBundle.getBundle("FontViewer.resources.Opcion").getString("version"));
         jLabel2.setOpaque(true);
         jPanel1.add(jLabel2, java.awt.BorderLayout.SOUTH);
 

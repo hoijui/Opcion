@@ -18,34 +18,16 @@
 */
 
 /*
- * AAToggleButton.java
+ * AATextPane.java
  *
- * Created on 29 January 2004, 21:50
+ * Created on 19 Feburary 2004, 11:30
  */
 package FontViewer.components;
 
 import java.awt.*;
 import javax.swing.*;
 
-public class AAToggleButton extends JToggleButton {
-    String fname;
-    String floc;
-    
-    public AAToggleButton(String s, String fname, String floc) {
-        super(s);
-        this.fname = fname;
-        this.floc = floc;
-        this.setToolTipText(fname + " (" + floc + ")");
-    }
-    
-    public String getFName() {
-        return fname;
-    }
-    
-    public String getFLoc() {
-        return floc;
-    }
-    
+public class AATextPane extends JTextPane{
     public void paintComponent(Graphics g) {
         Graphics2D g2d = null;
         if ( g instanceof Graphics2D ) {

@@ -1,3 +1,17 @@
+Version 1.1.0
+
+   Integrated list view into main window.
+
+   Integrated favourite fonts into the main window. Favourite fonts can now be viewed like system/other fonts.
+
+   Added add/remove to favourite fonts button in the sample text area. You can also add or remove a font to favourites by pressing the space key.
+
+   Added bold, italic and underline functionality for sample text. These font effects will not effect fonts in the list view.
+
+   Added shortcut keys for navigating fonts. See shortcuts under the help menu.
+
+   Removed ability to set font size in list view. This can now be done from the sample text area.
+
 Version 1.0.1
 
-    Fixed system fonts list. Now all system fonts are displayed rather than just the font family names. This also fixes inconsistancies with selected and displayed fonts.
+   Fixed system fonts list. Now all system fonts are displayed rather than just the font family names. This also fixes inconsistancies with selected and displayed fonts.

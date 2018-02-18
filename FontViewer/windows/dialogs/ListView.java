@@ -96,8 +96,8 @@ public class ListView extends javax.swing.JDialog {
         
         for (int i=fontNum; i<drawToNum; i++) {
             // Assign font to variable, or create font if working with files
-            if (list[i] instanceof java.awt.Font) {
-                f = (Font)list[i];
+            if (list[i] instanceof String) {
+                f = new Font(list[i].toString(), Font.PLAIN, fontSize);
                 wrf = new WeakReference(f);
                 objectType = SYSTEM;
             } else if (list[i] instanceof java.io.File) {
@@ -303,7 +303,6 @@ public class ListView extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("List View");
-        setModal(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);

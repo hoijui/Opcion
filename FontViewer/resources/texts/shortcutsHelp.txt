@@ -1,0 +1,14 @@
+Next page (in list view)
+	. (The > key)
+
+Previous page (in list view)
+	, (The < key)
+
+Next font (in both quick and list view)
+	M
+
+Previous font (in both quick and list view)
+	K
+
+Add/Remove font (depending on current tab)
+	SPACE

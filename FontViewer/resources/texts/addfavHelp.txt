@@ -1,0 +1,3 @@
+To add a font to your favourites list, either click on the text that look best to you in list view (all list view items are clickable) or click the add to favourites button in the sample text area.
+
+When clicking an item in list view you add the font that rendered that item.  When you click add to favourites button you are adding the font that rendered the text in the sample text area.
