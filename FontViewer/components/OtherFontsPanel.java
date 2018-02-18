@@ -26,11 +26,14 @@ package FontViewer.components;
 import FontViewer.windows.*;
 
 import java.io.*;
+import java.awt.*;
 import javax.swing.*;
+import java.lang.ref.*;
 
 public class OtherFontsPanel extends javax.swing.JPanel implements ListPanel {
     private File currentDirectory;
     private String[] fnames;
+    private String[] fontnames;
     private MainWindow mw;
     
     /** Creates new form OtherFontsPanel */
@@ -80,8 +83,33 @@ public class OtherFontsPanel extends javax.swing.JPanel implements ListPanel {
         return otherFontsList.getSelectedIndex();
     }
     
+    // This method is too slow, need to read file names manually
+    private void updateFontNames() {
+        Font f = null;
+        WeakReference wrf = null;
+        String fontfile = "";
+        fontnames = new String[fnames.length];
+        
+        for (int i=0; i<fnames.length; i++) {
+            try {
+                fontfile = currentDirectory.toString() + File.separator + fnames[i];
+                System.out.println("FF: " + fontfile);
+                f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(fontfile));
+                wrf = new WeakReference(f);
+                fontnames[i] = ((Font)wrf.get()).getName();
+            } catch (IOException ioe) {
+                fontnames[i] = "Cannot load " + fnames[i] + " [IOException]";
+            } catch (FontFormatException ffe) {
+                fontnames[i] = "Cannot load " + fnames[i] + " [FontFormatException]";
+            }
+        }
+    }
+    
     private void updateDisplay() {
         fnames = currentDirectory.list(new FontViewer.filters.FontFileFilter());
+        FontViewer.util.QuickSort.sort(fnames, true);
+        // updateFontNames(); Too slow
+        // java.util.Arrays.sort(fnames); Java Arrays sort is case senstive, not that desirable
         
         if (fnames.length == 0) {
             String[] message = {"This folder does not contain any fonts."};
@@ -91,7 +119,7 @@ public class OtherFontsPanel extends javax.swing.JPanel implements ListPanel {
             otherFontsList.setListData(fnames);
             otherFontsList.setEnabled(true);
         }
-
+        
         mw.updateDisplay();
     }
     
@@ -99,7 +127,7 @@ public class OtherFontsPanel extends javax.swing.JPanel implements ListPanel {
         otherFontsList.setSelectedValue(name, true);
         int p = otherFontsList.getSelectedIndex();
         if (p >= 0)
-            mw.setCurrentFont(fnames[p].toString(), currentDirectory.toString(), p);        
+            mw.setCurrentFont(fnames[p].toString(), currentDirectory.toString(), p);
     }
     
     public void selectNext() {
