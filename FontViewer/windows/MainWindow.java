@@ -80,8 +80,16 @@ public class MainWindow extends javax.swing.JFrame {
         fontSizeComboBox.setSelectedItem(new Integer(fontSize));
 
         // Initialize system fonts
+        initSystemFonts();
+    }
+    
+    private void initSystemFonts() {
+        // Initialize system fonts
         systemFonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
-        systemFontsNames = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+        systemFontsNames = new String[systemFonts.length];
+        for (int i=0; i<systemFonts.length; i++) {
+            systemFontsNames[i] = systemFonts[i].getName();
+        }
         systemFontsList.setListData(systemFontsNames);
     }
     
@@ -448,6 +456,8 @@ public class MainWindow extends javax.swing.JFrame {
                 WeakReference wrf = new WeakReference(chosenFont);
                 previewTextArea.setFont((Font)wrf.get());
                 fontName.setText(((Font)wrf.get()).getName());
+//                previewTextArea.setFont(chosenFont);
+//                fontName.setText(chosenFont.getName());
             }
         } else if (tabbedPane.getTitleAt(tabbedPane.getSelectedIndex()).equals("Other Fonts")) {
             if (fileList.getSelectedValue() != null) {

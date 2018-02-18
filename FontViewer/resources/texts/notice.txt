@@ -1,1 +1,1 @@
-Opcion Font Viewer v1.0, Copyright (C) 2004 Paul Chiu. Opcion Font Viewer comes with ABSOLUTELY NO WARRANTY; for details see About in the Help menu.  This is free software, and you are welcome to redistribute it under certain conditions; see the full Opcion License in About.
+Opcion Font Viewer v1.0.1, Copyright (C) 2004 Paul Chiu. Opcion Font Viewer comes with ABSOLUTELY NO WARRANTY; for details see About in the Help menu.  This is free software, and you are welcome to redistribute it under certain conditions; see the full Opcion License in About.

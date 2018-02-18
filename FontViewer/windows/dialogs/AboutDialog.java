@@ -54,7 +54,8 @@ public class AboutDialog extends javax.swing.JDialog {
         logoLabel = new javax.swing.JLabel();
         contentPanel = new javax.swing.JPanel();
         homepagePanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        homepageButton = new javax.swing.JButton();
+        changeLogButton = new javax.swing.JButton();
         creditsPanel = new javax.swing.JPanel();
         creditsScrollPane = new javax.swing.JScrollPane();
         creditsTextArea = new TextAreaFromFile("credits.txt");
@@ -76,16 +77,25 @@ public class AboutDialog extends javax.swing.JDialog {
 
         contentPanel.setLayout(new java.awt.BorderLayout());
 
-        homepagePanel.setBorder(new javax.swing.border.TitledBorder(" Opcion Font Viewer v1.0.0 "));
-        jButton1.setText("Visit Homepage");
-        jButton1.setToolTipText(homepage);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        homepagePanel.setBorder(new javax.swing.border.TitledBorder(" Opcion Font Viewer v1.0.1 "));
+        homepageButton.setText("Visit Homepage");
+        homepageButton.setToolTipText(homepage);
+        homepageButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                homepageButtonActionPerformed(evt);
             }
         });
 
-        homepagePanel.add(jButton1);
+        homepagePanel.add(homepageButton);
+
+        changeLogButton.setText("View Change Log");
+        changeLogButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeLogButtonActionPerformed(evt);
+            }
+        });
+
+        homepagePanel.add(changeLogButton);
 
         contentPanel.add(homepagePanel, java.awt.BorderLayout.NORTH);
 
@@ -132,6 +142,11 @@ public class AboutDialog extends javax.swing.JDialog {
         setBounds((screenSize.width-470)/2, (screenSize.height-295)/2, 470, 295);
     }//GEN-END:initComponents
 
+    private void changeLogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeLogButtonActionPerformed
+        TextAreaFromFileDialog taffd = new TextAreaFromFileDialog((JFrame)this.getParent(), "Change Log", "changeLog.txt");
+        taffd.show();
+    }//GEN-LAST:event_changeLogButtonActionPerformed
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         TextAreaFromFileDialog taffd = new TextAreaFromFileDialog((JFrame)this.getParent(), "JGoodies License", "jgoodiesLicense.txt");
         taffd.setWrap(false);
@@ -141,12 +156,12 @@ public class AboutDialog extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         TextAreaFromFileDialog taffd = new TextAreaFromFileDialog((JFrame)this.getParent(), "Opcion License", "opcionLicense.txt");
         taffd.setWrap(false);
-        taffd.show();        
+        taffd.show();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void homepageButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homepageButtonActionPerformed
         com.xlreader.shared.io.S_ToBrowserDefault.s_displayURL(homepage);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_homepageButtonActionPerformed
     
     /** Exit the Application */
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
@@ -154,13 +169,14 @@ public class AboutDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_exitForm
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton changeLogButton;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JLabel copyrightLabel;
     private javax.swing.JPanel creditsPanel;
     private javax.swing.JScrollPane creditsScrollPane;
     private javax.swing.JTextArea creditsTextArea;
+    private javax.swing.JButton homepageButton;
     private javax.swing.JPanel homepagePanel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JPanel licensesPanel;

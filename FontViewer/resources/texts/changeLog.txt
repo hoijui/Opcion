@@ -1,0 +1,3 @@
+Version 1.0.1
+
+    Fixed system fonts list. Now all system fonts are displayed rather than just the font family names. This also fixes inconsistancies with selected and displayed fonts.
