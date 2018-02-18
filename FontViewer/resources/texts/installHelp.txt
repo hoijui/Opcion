@@ -1,0 +1,16 @@
+Visit one of the following sites to learn how to install fonts for your operating system.
+
+Windows 9x
+	http://www.microsoft.com/typography/TrueTypeInstallWin95.mspx
+
+Windows XP
+	http://www.microsoft.com/typography/TrueTypeInstallXP.mspx
+
+Linux (XFree86)
+	http://tldp.org/HOWTO/Font-HOWTO/xfonts.html
+
+Linux (KDE)
+	http://www.linuxbeginner.org/modules.php?name=News&file=article&sid=55
+
+Mac OS X
+	http://docs.info.apple.com/article.html?artnum=151832

@@ -1,0 +1,15 @@
+Author:
+	Paul Chiu
+	http://www.paulchiu.net
+
+GUI Look & Feel:
+	JGoodies
+	http://www.jgoodies.com
+
+Java Executable Wrapper:
+	JSmooth
+	http://jsmooth.sourceforge.net
+
+Default Browser Launcher:
+	Robert Della Malva
+	http://www.xlreader.com
